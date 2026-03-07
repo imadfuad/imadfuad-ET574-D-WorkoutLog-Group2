@@ -1,4 +1,3 @@
-# tracker.py
 import data
 
 def view_all_workouts():
@@ -10,30 +9,30 @@ def view_all_workouts():
         print("No workouts recorded yet.")
         return
 
-    # Loop through the parallel lists and print each entry [cite: 37]
+    # Loop through the parallel lists and print each entry
     for i in range(len(data.workout_types)):
-        print(f"{i + 1}. {data.workout_types[i]} - {data.workout_durations[i]} mins")
+        # Notice this now uses data.workout_minutes to match your summary function!
+        print(f"{i + 1}. {data.workout_types[i]} - {data.workout_minutes[i]} mins")
 
 
 def summary_report():
     """Shows total time, number of workouts, average, longest, and shortest duration."""
-    print("\n--- Workout Summary ---")
-    
-    # Check if there is data to summarize to prevent division by zero errors
-    if len(data.workout_durations) == 0:
-        print("No data available for a summary.")
+    # Check if the list is empty first
+    if not data.workout_minutes:
+        print("No workouts recorded yet.")
         return
 
-    # Perform the required calculations [cite: 38, 72]
-    num_workouts = len(data.workout_durations)
-    total_time = sum(data.workout_durations)
-    avg_duration = total_time / num_workouts
-    longest = max(data.workout_durations)
-    shortest = min(data.workout_durations)
+    # Calculate all required statistics
+    count = len(data.workout_minutes)
+    total_minutes = sum(data.workout_minutes)
+    average = total_minutes / count
+    longest = max(data.workout_minutes)
+    shortest = min(data.workout_minutes)
 
-    # Output the formatted statistics [cite: 38, 72]
-    print(f"Total Workouts: {num_workouts}")
-    print(f"Total Time Spent: {total_time} minutes")
-    print(f"Average Duration: {avg_duration:.2f} minutes")
+    # Output the formatted report
+    print("\n--- Workout Summary ---")
+    print(f"Total Workouts: {count}")
+    print(f"Total Time Spent: {total_minutes} minutes")
+    print(f"Average Duration: {average:.2f} minutes")
     print(f"Longest Workout: {longest} minutes")
     print(f"Shortest Workout: {shortest} minutes")

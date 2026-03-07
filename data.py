@@ -1,5 +1,5 @@
 # data.py
 
-# Temporarily hardcoding data so Student C can test their functions!
+# Temporarily hardcoding data so you can test your functions!
 workout_types = ["Running", "Cycling", "Weightlifting"]
-workout_durations = [30, 45, 60]
+workout_minutes = [30, 45, 60]
