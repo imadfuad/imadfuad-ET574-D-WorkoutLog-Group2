@@ -1,0 +1,4 @@
+issue_id,title,assigned_to,status,commit_id,notes
+#1,implement add_workout() with input validation,manpreetsingh-D,Open,,
+#2,implement view_all_workouts() (display all workouts),Jahidul79,Open,,
+#3,implement summary_report() (workout summary stats),Jahidul79,Open,,
