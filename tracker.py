@@ -19,7 +19,7 @@ def add_workout():
         return
 
     data.workout_types.append(workout)
-    data.duration.append(duration)    
+    data.durations.append(duration)    
             
             
 def view_all_workouts():
