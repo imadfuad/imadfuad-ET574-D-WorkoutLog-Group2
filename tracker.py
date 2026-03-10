@@ -1,5 +1,27 @@
 import data
 
+def add_workout():
+
+    workout = input("Enter workout type: ")
+    if workout == "":
+        print("Workout type cannot be empty.")
+        return
+
+    try:
+        duration = int(input("Enter duration (minutes): "))
+
+        if duration <= 0:
+            print("Duration must be greater than 0.")
+            return
+
+    except ValueError:
+        print("Please enter a valid number.")
+        return
+
+    data.workout_types.append(workout)
+    data.duration.append(duration)    
+            
+            
 def view_all_workouts():
     """Prints each entry in a formatted list."""
     print("\n--- All Workouts ---")
